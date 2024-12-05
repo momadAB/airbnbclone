@@ -54,6 +54,7 @@ const ProfileCard = () => {
     <ScrollView
       style={styles.container}
       contentContainerStyle={{ paddingBottom: 20 }}
+      showsVerticalScrollIndicator={false}
     >
       <View style={styles.card}>
         <View style={styles.header}>

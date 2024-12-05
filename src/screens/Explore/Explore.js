@@ -25,6 +25,7 @@ const Explore = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
         stickyHeaderIndices={[0, 1]}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );

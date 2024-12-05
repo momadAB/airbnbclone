@@ -124,7 +124,7 @@ const Profile = () => {
   ];
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       {/* Header with Title and Bell Icon */}
       <View style={styles.header}>
         <Text style={styles.titleText}>Profile</Text>

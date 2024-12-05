@@ -59,7 +59,7 @@ const AccommodationDetailPage = ({ route }) => {
 
   return (
     // FIRST SECTION
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Image source={{ uri: accommodation.image }} style={styles.image} />
       <View style={styles.content}>
         <Text style={styles.title}>{accommodation.title}</Text>
