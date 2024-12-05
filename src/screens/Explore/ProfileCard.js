@@ -7,11 +7,11 @@ import { Feather } from "@expo/vector-icons";
 
 const ProfileCard = () => {
   const host = {
-    name: "John Doe",
+    name: "Paivi",
     image: "https://via.placeholder.com/150",
     joinDate: "January 2018",
     reviewCount: 324,
-    rating: 4.9,
+    rating: 5.0,
     responseRate: 100,
     responseTime: "within an hour",
     languages: ["English", "Spanish", "French"],
@@ -67,14 +67,14 @@ const ProfileCard = () => {
           <Text style={styles.role}>Host</Text>
         </View>
         <View style={styles.stats}>
-          <Text style={styles.stat}>12 </Text>
+          <Text style={styles.stat}>7 </Text>
           <Text style={{ fontSize: 10 }}>Reviews</Text>
           <View style={{ flexDirection: "row" }}>
-            <Text style={styles.stat}>4.9 </Text>
+            <Text style={styles.stat}>5.0 </Text>
             <Entypo name="star" size={15} color="black" marginTop={4} />
           </View>
           <Text style={{ fontSize: 10 }}>Rating</Text>
-          <Text style={styles.stat}>6 </Text>
+          <Text style={styles.stat}>5 </Text>
           <Text style={{ fontSize: 10 }}>Years hosting</Text>
         </View>
       </View>

@@ -32,29 +32,18 @@ const AccommodationDetailPage = ({ route }) => {
     setShowFullDescription(!showFullDescription);
   };
 
+  const handleGoToHostProfile = () => {
+    navigation.navigate(ROUTE.EXPLOREPAGES.RENTERPAGE);
+  };
+
   const handleBookNow = () => {
     addTrip(accommodation);
     navigation.getParent().navigate(ROUTE.NAVNAME.TRIPNAV);
   };
 
-  // const accommodation = {
-  //   id: "1",
-  //   image:
-  //     "https://a0.muscache.com/im/pictures/prohost-api/Hosting-1142048721696770947/original/e4571cf9-b8cf-4cfa-bcac-77b45dd453c2.png?im_w=960&im_format=avif",
-  //   title: "Cozy Apartment in Downtown",
-  //   type: "Entire apartment",
-  //   price: 120,
-  //   rating: 4.8,
-  //   reviewsNumber: 120,
-  //   description:
-  //     "Beautiful and cozy apartment in the heart of the city. Perfect for a peaceful getaway.",
-  //   location: "Downtown, Metropolis",
-  //   distance: "2,562 km away",
-  //   availabilityDate: "Dec 27 -  31",
-  // };
   const renter = {
     id: "1",
-    name: "John Doe",
+    name: "Paivi",
     reviews: 150,
     rating: 4.9,
     yearsOfHosting: 5,
@@ -184,26 +173,28 @@ const AccommodationDetailPage = ({ route }) => {
           <Text style={styles.header}>Meet your Host</Text>
 
           {/* Host Section */}
-          <View style={styles.hostContainer}>
-            <View style={{ marginLeft: 10 }}>
-              <Image
-                source={{ uri: renter.profilePicture }}
-                style={styles.profileImage}
-              />
-              <Text style={styles.hostName}>Paivi</Text>
+          <TouchableOpacity onPress={handleGoToHostProfile}>
+            <View style={styles.hostContainer}>
+              <View style={{ marginLeft: 10 }}>
+                <Image
+                  source={{ uri: renter.profilePicture }}
+                  style={styles.profileImage}
+                />
+                <Text style={styles.hostName}>Paivi</Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: "column",
+                  marginTop: 10,
+                  marginLeft: 70,
+                }}
+              >
+                <Text style={styles.reviews}>7 Reviews</Text>
+                <Text style={styles.rating}>5.0 ⭐ Rating</Text>
+                <Text style={styles.hosting}>5 Months hosting</Text>
+              </View>
             </View>
-            <View
-              style={{
-                flexDirection: "column",
-                marginTop: 10,
-                marginLeft: 70,
-              }}
-            >
-              <Text style={styles.reviews}>7 Reviews</Text>
-              <Text style={styles.rating}>5.0 ⭐ Rating</Text>
-              <Text style={styles.hosting}>5 Months hosting</Text>
-            </View>
-          </View>
+          </TouchableOpacity>
 
           {/* Host Details */}
           <View style={styles.detailsContainer}>
@@ -541,20 +532,20 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   hostContainer: {
-    flexDirection: "row",
-    marginBottom: 20,
-    marginRight: 20,
-    // borderColor: "lightgray",
-    // borderRadius: 20,
-    // overflow: "hidden",
-    padding: 10,
-    width: "auto",
-    justifyContent: "center",
+    padding: 20,
+    borderRadius: 10,
+    backgroundColor: "white",
     shadowColor: "#000",
+    shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    elevation: 1,
+    shadowRadius: 4,
+    elevation: 4,
+    marginBottom: 20,
+    alignItems: "center",
+    flexDirection: "row",
+    width: "90%",
+    marginLeft: "5%",
+    justifyContent: "space-around",
   },
   profileImage: {
     width: 80,

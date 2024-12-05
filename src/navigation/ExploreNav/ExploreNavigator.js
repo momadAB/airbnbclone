@@ -5,6 +5,7 @@ import Explore from "@screens/Explore/Explore";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
+import ProfileCard from "@screens/Explore/ProfileCard";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,19 @@ const ExploreNavigator = () => {
           ),
         })}
         component={AccommodationDetailPage}
+      />
+      <Stack.Screen
+        name={ROUTE.EXPLOREPAGES.RENTERPAGE}
+        options={({ navigation }) => ({
+          headerShown: true,
+          headerTitle: "", // Empty title
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back" size={24} color="black" />
+            </TouchableOpacity>
+          ),
+        })}
+        component={ProfileCard}
       />
       {/* <Stack.Screen name={ROUTE.TABPAGES.WISHLISTS} component={} />
       <Stack.Screen name={ROUTE.TABPAGES.TRIPS} component={} />

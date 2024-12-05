@@ -19,6 +19,7 @@ ROUTE = {
   EXPLOREPAGES: {
     EXPLORE: "ExplorePage",
     DETAILPAGE: "DetailPage",
+    RENTERPAGE: "RenterPage",
   },
   // AUTHPAGES: {
   //   LOGIN: "Login",
