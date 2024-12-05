@@ -8,8 +8,8 @@
       "@components/*": ["src/components/*"],
       "@screens/*": ["src/screens/*"],
       "@navigation/*": ["src/navigation/*"],
-      "@routes/*": ["src/routes/*"]
-      // "@context/*": ["src/context/*"]
+      "@routes/*": ["src/routes/*"],
+      "@context/*": ["src/context/*"]
     }
   },
   "include": ["src/**/*"]

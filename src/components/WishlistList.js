@@ -1,5 +1,6 @@
 import { View, FlatList, StyleSheet } from "react-native";
 import AccommodationItem from "@components/AccomodationItem";
+import TripItem from "@components/TripItem";
 const accommodations = [
   {
     id: "1",

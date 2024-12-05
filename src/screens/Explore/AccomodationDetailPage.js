@@ -15,14 +15,26 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
+import { useTrip } from "@context/TripsContext";
+import { useNavigation } from "@react-navigation/native";
+import ROUTE from "@routes/index";
+
 const { width } = Dimensions.get("window");
 
 const AccommodationDetailPage = ({ route }) => {
   const { accommodation } = route.params;
   const [showFullDescription, setShowFullDescription] = useState(false);
 
+  const navigation = useNavigation();
+  const { addTrip } = useTrip();
+
   const toggleDescription = () => {
     setShowFullDescription(!showFullDescription);
+  };
+
+  const handleBookNow = () => {
+    addTrip(accommodation);
+    navigation.getParent().navigate(ROUTE.NAVNAME.TRIPNAV);
   };
 
   // const accommodation = {
@@ -293,7 +305,7 @@ const AccommodationDetailPage = ({ route }) => {
           </View>
 
           <View style={styles.reserveButton}>
-            <TouchableOpacity onPress={() => {}}>
+            <TouchableOpacity onPress={handleBookNow}>
               <Text
                 style={{
                   color: "white",

@@ -4,6 +4,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { NavigationContainer } from "@react-navigation/native";
 import MainNavigator from "@navigation/MainNav/MainNavigator";
 
+import { TripsProvider } from "@context/TripsContext";
+
 export default function App() {
   // Set defaultProps for Text
   Text.defaultProps = Text.defaultProps || {};
@@ -18,11 +20,13 @@ export default function App() {
   };
 
   return (
-    <NavigationContainer style={{ backgroundColor: "white" }}>
-      <SafeAreaView style={styles.container}>
-        <MainNavigator />
-      </SafeAreaView>
-    </NavigationContainer>
+    <TripsProvider>
+      <NavigationContainer style={{ backgroundColor: "white" }}>
+        <SafeAreaView style={styles.container}>
+          <MainNavigator />
+        </SafeAreaView>
+      </NavigationContainer>
+    </TripsProvider>
   );
   r;
 }

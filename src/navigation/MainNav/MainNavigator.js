@@ -14,7 +14,7 @@ const Tab = createBottomTabNavigator();
 const MainNavigator = () => {
   return (
     <Tab.Navigator
-      initialRouteName="Explore"
+      initialRouteName={ROUTE.NAVNAME.TRIPNAV}
       screenOptions={({ route }) => ({
         headerShown: false,
         cardStyle: { backgroundColor: "#FFFFFF" },

@@ -1,12 +1,24 @@
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  FlatList,
+} from "react-native";
 import React from "react";
 import ROUTE from "@routes/index";
 import { useNavigation } from "@react-navigation/native";
 
-const tripsData = [];
+import { useTrip } from "@context/TripsContext";
+import AccommodationItem from "@components/AccomodationItem";
+import TripItem from "@components/TripItem";
 
 const Trips = () => {
   const navigation = useNavigation();
+
+  const { trips } = useTrip();
+
+  const tripsData = trips;
 
   const handleGoToExplore = (e) => {
     navigation.getParent().navigate(ROUTE.NAVNAME.EXPLORENAV);
@@ -42,6 +54,11 @@ const Trips = () => {
       <Text style={styles.tripsTitleText}>Trips</Text>
       {/* Separator */}
       <View style={styles.separator}></View>
+      <FlatList
+        data={tripsData}
+        renderItem={({ item }) => <TripItem accommodation={item} />}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 };
@@ -52,8 +69,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    // alignItems: "center",
-    // justifyContent: "center",
+    paddingHorizontal: 16,
   },
   tripsTitleText: {
     padding: 30,
@@ -68,6 +84,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     width: "85%",
     opacity: 0.3,
+    marginBottom: 20,
   },
   noTripsBookedText: {
     padding: 30,
