@@ -1,11 +1,19 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, TouchableOpacity } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
+import { useNavigation } from "@react-navigation/native";
+import ROUTE from "@routes/index";
 
 const AccommodationItem = ({ accommodation }) => {
+  const navigation = useNavigation();
+
+  const handleViewDetails = () => {
+    navigation.navigate(ROUTE.EXPLOREPAGES.DETAILPAGE, { accommodation });
+  };
+
   return (
     <View style={styles.container}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={handleViewDetails}>
         <Image source={{ uri: accommodation.image }} style={styles.image} />
       </TouchableOpacity>
 

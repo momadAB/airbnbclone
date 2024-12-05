@@ -10,12 +10,17 @@ import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import SettingsCard from "@components/SettingsCard";
 
+import { useNavigation } from "@react-navigation/native";
+import ROUTE from "@routes/index";
+
 const Profile = () => {
+  const navigation = useNavigation();
+
   const settings = [
     {
       iconName: "person-outline",
       text: "Personal information",
-      onPress: () => console.log("Personal information pressed"),
+      onPress: () => navigation.navigate(ROUTE.PROFILEPAGES.PERSONALINFO),
     },
     {
       iconName: "lock-closed-outline",

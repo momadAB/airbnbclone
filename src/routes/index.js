@@ -1,10 +1,24 @@
 ROUTE = {
+  NAVNAME: {
+    EXPLORENAV: "Explore",
+    WISHLISTNAV: "Wishlists",
+    TRIPNAV: "Trips",
+    MESSAGESNAV: "Messages",
+    PROFILENAV: "Profile",
+  },
   TABPAGES: {
     EXPLORE: "ExplorePage",
     WISHLISTS: "WishlistsPage",
     TRIPS: "TripsPage",
     MESSAGES: "MessagesPage",
     PROFILE: "ProfilePage",
+  },
+  PROFILEPAGES: {
+    PERSONALINFO: "PersonalInfo",
+  },
+  EXPLOREPAGES: {
+    EXPLORE: "ExplorePage",
+    DETAILPAGE: "DetailPage",
   },
   // AUTHPAGES: {
   //   LOGIN: "Login",

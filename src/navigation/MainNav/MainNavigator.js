@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { Image } from "react-native";
+import ROUTE from "@routes/index";
 
 const Tab = createBottomTabNavigator();
 
@@ -57,11 +58,23 @@ const MainNavigator = () => {
         tabBarInactiveTintColor: "gray",
       })}
     >
-      <Tab.Screen name={"Explore"} component={ExploreNavigator} />
-      <Tab.Screen name={"Wishlists"} component={WishlistsNavigator} />
-      <Tab.Screen name={"Trips"} component={TripsNavigator} />
-      <Tab.Screen name={"Messages"} component={MessagesNavigator} />
-      <Tab.Screen name={"Profile"} component={ProfileNavigator} />
+      <Tab.Screen
+        name={ROUTE.NAVNAME.EXPLORENAV}
+        component={ExploreNavigator}
+      />
+      <Tab.Screen
+        name={ROUTE.NAVNAME.WISHLISTNAV}
+        component={WishlistsNavigator}
+      />
+      <Tab.Screen name={ROUTE.NAVNAME.TRIPNAV} component={TripsNavigator} />
+      <Tab.Screen
+        name={ROUTE.NAVNAME.MESSAGESNAV}
+        component={MessagesNavigator}
+      />
+      <Tab.Screen
+        name={ROUTE.NAVNAME.PROFILENAV}
+        component={ProfileNavigator}
+      />
     </Tab.Navigator>
   );
 };

@@ -1,9 +1,17 @@
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import React from "react";
+import ROUTE from "@routes/index";
+import { useNavigation } from "@react-navigation/native";
 
 const tripsData = [];
 
 const Trips = () => {
+  const navigation = useNavigation();
+
+  const handleGoToExplore = (e) => {
+    navigation.getParent().navigate(ROUTE.NAVNAME.EXPLORENAV);
+  };
+
   if (tripsData.length === 0) {
     return (
       <View style={styles.container}>
@@ -14,7 +22,7 @@ const Trips = () => {
         <Text style={styles.paragraphText}>
           Time to dust off your bags and start planning your next adventure.
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={handleGoToExplore}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>Start searching</Text>
           </View>
